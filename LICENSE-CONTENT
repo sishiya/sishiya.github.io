@@ -1,0 +1,20 @@
+しし屋のトップページ（sishiya.github.io）の中身のライセンス
+Copyright (c) 2026 sishiya
+
+このリポジトリの「中身」は、クリエイティブ・コモンズ 表示-非営利 4.0 国際
+（CC BY-NC 4.0）で公開します。
+  https://creativecommons.org/licenses/by-nc/4.0/deed.ja
+  （法的な全文 https://creativecommons.org/licenses/by-nc/4.0/legalcode.ja）
+
+・作者（sishiya / しし屋）の表示をすれば、共有・改変してかまいません。
+・営利目的では使えません。営利で使いたいときは作者に相談してください。
+
+■ 中身にあたるもの
+  - 「しし屋」「まなびラボ」「あそびラボ」「くらしラボ」の名前
+  - ページの文章（日本語と英語の両方）
+  - しし屋のライオンのアイコン、ラボのアイコン、OGP の画像（assets/ など）
+  - README.md・CLAUDE.md などの文書
+  これらがプログラムのファイルの中に書かれていても、中身として扱います。
+
+■ 中身にあたらないもの（LICENSE の MIT License）
+  - ページの仕組み（HTML の組み立て・言語の切り替え・スタイル）、tools/ の道具
