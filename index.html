@@ -6,6 +6,7 @@
 <script>/* 言語 ja／en（まなびラボの I18N.md と同じ）: ?lang= → ラボで選んだもの（localStorage 'manabi-lang'）→ ブラウザの言語 */var LANG=(function(){var q=new URLSearchParams(location.search).get('lang'),s=null;try{s=localStorage.getItem('manabi-lang');}catch(e){}var l=q==='en'||q==='ja'?q:s==='en'||s==='ja'?s:/^ja\b/i.test(navigator.language||'ja')?'ja':'en';document.documentElement.lang=l;return l;})();function setLang(l){try{localStorage.setItem('manabi-lang',l);}catch(e){}var u=new URL(location.href);u.searchParams.set('lang',l);location.href=u.href;}</script>
 <title>しし屋 ― ブラウザで動く、「しくみ」の見えるアプリ</title>
 <meta name="description" content="しし屋は、ブラウザで動くアプリを作っています。理科のアプリの「まなびラボ」、小さなゲームの「あそびラボ」、くらしの道具の「くらしラボ」。無料・インストール不要で、スマホでも動きます。">
+<meta name="google-site-verification" content="dD02qa-rgBbwyVDz8sacKRQIVEWhm3mKeqHTb-JRRIw">
 <link rel="canonical" href="https://sishiya.github.io/">
 <link rel="alternate" hreflang="ja" href="https://sishiya.github.io/?lang=ja">
 <link rel="alternate" hreflang="en" href="https://sishiya.github.io/?lang=en">
