@@ -15,6 +15,7 @@
 | `robots.txt`・`sitemap.xml` | 検索エンジン向け。robots.txt は URL のいちばん上にしか置けないので、ラボのサイトマップもここに並べる |
 | `assets/` | ライオンのアイコン（`lion.svg`）、OGP の画像（`og.svg` → `og.png`、1200×630） |
 | `tools/check-public.ps1` | 公開前チェック（pre-commit で走る） |
+| `SETUP.md` | 作って公開するまでの手順（リポジトリ・push・Search Console・名前そろえ） |
 
 ## はじめてクローンしたとき
 

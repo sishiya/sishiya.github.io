@@ -11,6 +11,9 @@
 - アクセス解析は GA4 `G-E2VPYKV2Y9`（`content_group:'top'`）。プライバシーポリシーはまなびラボのものにリンク。
 - `robots.txt` はこのリポジトリにしか置けない（GitHub Pages の URL のいちばん上）。ラボのサイトマップができたら `Sitemap:` の行を足す。
 
+## 作ったときの手順
+- `SETUP.md`（リポジトリの作り方・push のしかた・Search Console は HTML タグで・名前そろえ）。
+
 ## 進め方の約束
 - 進め方は `../アプリ開発/RULES.md` を下敷きにする。
 - **commit の前に毎回、公開前チェック** `tools/check-public.ps1`（pre-commit でも走る）。結果をユーザーに伝える。Public なので push＝公開。**push はユーザーがチャットで頼んだときだけ**。
