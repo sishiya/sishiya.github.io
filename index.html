@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>/* 言語 ja／en（まなびラボの I18N.md と同じ）: ?lang= → ラボで選んだもの（localStorage 'manabi-lang'）→ ブラウザの言語 */var LANG=(function(){var q=new URLSearchParams(location.search).get('lang'),s=null;try{s=localStorage.getItem('manabi-lang');}catch(e){}var l=q==='en'||q==='ja'?q:s==='en'||s==='ja'?s:/^ja\b/i.test(navigator.language||'ja')?'ja':'en';document.documentElement.lang=l;return l;})();function setLang(l){try{localStorage.setItem('manabi-lang',l);}catch(e){}var u=new URL(location.href);u.searchParams.set('lang',l);location.href=u.href;}</script>
+<title>しし屋 ― ブラウザで動く、「しくみ」の見えるアプリ</title>
+<meta name="description" content="しし屋は、ブラウザで動くアプリを作っています。理科のアプリの「まなびラボ」、小さなゲームの「あそびラボ」、くらしの道具の「くらしラボ」。無料・インストール不要で、スマホでも動きます。">
+<link rel="canonical" href="https://sishiya.github.io/">
+<link rel="alternate" hreflang="ja" href="https://sishiya.github.io/?lang=ja">
+<link rel="alternate" hreflang="en" href="https://sishiya.github.io/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://sishiya.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="しし屋">
+<meta property="og:title" content="しし屋 ― ブラウザで動く、「しくみ」の見えるアプリ">
+<meta property="og:description" content="理科のアプリ（まなびラボ）・小さなゲーム（あそびラボ）・くらしの道具（くらしラボ）。無料・インストール不要。">
+<meta property="og:url" content="https://sishiya.github.io/">
+<meta property="og:image" content="https://sishiya.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@sishiya22">
+<link rel="icon" href="assets/lion.svg" type="image/svg+xml">
+<script>/* アクセス解析 Google Analytics 4（ラボと同じ ID。GitHub Pages で開いたときだけ。content_group で見分ける） */(function(){if(location.hostname!=='sishiya.github.io')return;var id='G-E2VPYKV2Y9',s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+id;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config',id,{allow_google_signals:false,allow_ad_personalization_signals:false,content_group:'top'});})();</script>
+<style>
+:root{--bg:#FFF1DC;--dot:#F1D7B3;--ink:#2B3A55;--muted:#7a6a56;--line:#efd9b9;--card:#fffaf2;--accent:#D9682B;
+  --manabi:#2b6cb0;--asobi:#d9480f;--kurashi:#2f855a;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#1b2333;--dot:#253049;--ink:#eef2f8;--muted:#a9b3c4;--line:#2e3a52;--card:#222c3f;--accent:#f0955e;
+  --manabi:#7fb0e8;--asobi:#f2875a;--kurashi:#6fcf97;color-scheme:dark}}
+:root[lang=en] [lang=ja],:root:not([lang=en]) [lang=en]{display:none!important}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg) radial-gradient(var(--dot) 1.5px,transparent 1.6px) 0 0/22px 22px;color:var(--ink);
+  font-family:"Hiragino Sans","Yu Gothic UI","Meiryo",system-ui,sans-serif;line-height:1.75}
+p{word-break:auto-phrase;text-wrap:pretty}
+main{max-width:980px;margin:0 auto;padding:20px 16px 56px}
+a{color:var(--accent)}
+.langs{display:flex;justify-content:flex-end;gap:4px;font-size:13px}
+.langs button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:3px 12px;cursor:pointer}
+.langs button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* 見出し: ライオン＋しし屋 */
+.hero{display:flex;align-items:center;gap:22px;margin:28px 0 8px}
+.hero img{width:120px;height:120px;flex:none}
+h1{margin:0;font-size:60px;line-height:1.1;letter-spacing:.08em}
+.tag{margin:6px 0 0;color:var(--accent);font-weight:700;font-size:18px}
+.lead{margin:18px 0 0;max-width:720px;color:var(--muted)}
+
+/* 3つのラボ */
+.labs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.lab{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:14px;padding:18px 18px 16px;transition:transform .15s,box-shadow .15s}
+.lab:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.lab svg{width:52px;height:52px}
+.lab a{color:var(--c);font-size:22px;font-weight:800;text-decoration:none;margin-top:10px;line-height:1.4}
+.lab a::after{content:"";position:absolute;inset:0;border-radius:14px}
+.lab a:focus-visible{outline:none}.lab:has(a:focus-visible){outline:3px solid var(--c);outline-offset:2px}
+.lab .what{margin:2px 0 0;font-size:13px;font-weight:700;color:var(--muted)}
+.lab p{margin:8px 0 0;font-size:14px;line-height:1.7;flex:1}
+.lab .go{margin-top:12px;font-size:13px;font-weight:700;color:var(--c)}
+.manabi{--c:var(--manabi)}.asobi{--c:var(--asobi)}.kurashi{--c:var(--kurashi)}
+@media (prefers-reduced-motion:reduce){.lab{transition:none}.lab:hover{transform:none}}
+
+/* どこで見られるか */
+h2{font-size:18px;margin:48px 0 10px}
+.links{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+.links a{display:inline-block;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);text-decoration:none;font-size:14px}
+.links a:hover{border-color:var(--accent)}
+.links small{color:var(--muted)}
+
+.note{font-size:12px;color:var(--muted);margin:56px 0 0;padding-top:18px;border-top:1px solid var(--line)}
+.note p{margin:4px 0}
+
+/* スマホ: ラボは1列、見出しは小さく */
+@media (max-width:720px){
+  .labs{grid-template-columns:1fr;gap:12px}
+  .hero{gap:14px;margin-top:16px}.hero img{width:84px;height:84px}
+  h1{font-size:44px}.tag{font-size:15px}
+  .lab{display:grid;grid-template-columns:44px 1fr;column-gap:14px;padding:14px}
+  .lab svg{width:44px;height:44px;grid-row:span 4}
+  .lab a{margin-top:0;font-size:20px}
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="langs" role="group" aria-label="言語 / Language">
+    <button type="button" data-l="ja">日本語</button><button type="button" data-l="en">English</button>
+  </div>
+
+  <header class="hero">
+    <img src="assets/lion.svg" alt="" width="120" height="120">
+    <div>
+      <h1>しし屋</h1>
+      <p class="tag"><span lang="ja">ブラウザで動く、「しくみ」の見えるアプリ</span><span lang="en">Apps that run in your browser and show how things work</span></p>
+    </div>
+  </header>
+  <p class="lead"><span lang="ja">しし屋は、ブラウザで動くアプリを作っています。無料・インストール不要で、スマホでも動きます。いまは3つのラボがあります。</span><span lang="en">Sishiya makes apps that run in your browser: free, no install, and they work on phones too. There are three labs so far.</span></p>
+
+  <section class="labs" aria-label="ラボ">
+    <article class="lab manabi">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#2b6cb0"/><path d="M26 14h12M28 14v14L17 47a4 4 0 0 0 3.5 6h23a4 4 0 0 0 3.5-6L36 28V14" fill="none" stroke="#fff" stroke-width="3.5" stroke-linejoin="round"/><path d="M22 42h20l3 6H19z" fill="#fff"/></svg>
+      <a class="go-link" href="https://sishiya.github.io/manabi-lab/"><span lang="ja">まなびラボ</span><span lang="en">Manabi Lab</span></a>
+      <div class="what"><span lang="ja">理科のアプリ</span><span lang="en">Science apps</span></div>
+      <p><span lang="ja">ふだん見えない「しくみ」を、動かして見る。体の中・電波・量子・ブラックホール・進化など。物理は曲げずに計算し、出どころは画面に。</span><span lang="en">Move things and see how they work: inside the body, WiFi, quantum, black holes, evolution and more. The physics is computed honestly, with sources on screen.</span></p>
+    </article>
+    <article class="lab asobi">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#d9480f"/><rect x="10" y="19" width="44" height="24" rx="12" fill="#fff"/><path d="M22 25v12M16 31h12" stroke="#d9480f" stroke-width="4" stroke-linecap="round"/><circle cx="41" cy="28" r="3" fill="#d9480f"/><circle cx="47" cy="34" r="3" fill="#d9480f"/></svg>
+      <a class="go-link" href="https://sishiya.github.io/asobi-lab/"><span lang="ja">あそびラボ</span><span lang="en">Asobi Lab</span></a>
+      <div class="what"><span lang="ja">小さなゲーム</span><span lang="en">Small games</span></div>
+      <p><span lang="ja">ブラウザで遊べる小さなゲーム。恐竜を育てて人の世界記録に挑むかけっこなど、遊びの中にも本物の計算を。</span><span lang="en">Small games you can play in the browser, like raising dinosaurs to race, with real calculations inside the play.</span></p>
+    </article>
+    <article class="lab kurashi">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#2f855a"/><g fill="none" stroke="#fff" stroke-width="3.5" stroke-linejoin="round"><rect x="11" y="25" width="42" height="25" rx="3"/><path d="M24 25v-5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5M11 36h42"/></g><rect x="28" y="32" width="8" height="8" rx="1.5" fill="#fff"/></svg>
+      <a class="go-link" href="https://sishiya.github.io/kurashi-lab/"><span lang="ja">くらしラボ</span><span lang="en">Kurashi Lab</span></a>
+      <div class="what"><span lang="ja">くらしの道具</span><span lang="en">Everyday tools</span></div>
+      <p><span lang="ja">仕事や普段の生活に役立つ道具。答えだけでなく「なぜそうなるか」が見えて、入力したものは外に送りません。</span><span lang="en">Tools for work and daily life that show not just the answer but why, and never send what you enter anywhere.</span></p>
+    </article>
+  </section>
+
+  <h2><span lang="ja">動画・記事</span><span lang="en">Videos and articles</span></h2>
+  <ul class="links">
+    <li><a href="https://www.youtube.com/@sishiya22" target="_blank" rel="noopener">YouTube <small><span lang="ja">使い方の動画</span><span lang="en">app guides</span></small></a></li>
+    <li><a href="https://x.com/sishiya22" target="_blank" rel="noopener">X <small>@sishiya22</small></a></li>
+    <li><a href="https://note.com/sishiya" target="_blank" rel="noopener">note <small><span lang="ja">作った理由</span><span lang="en">why I make them (JP)</span></small></a></li>
+    <li><a href="https://zenn.dev/sishiya" target="_blank" rel="noopener">Zenn <small><span lang="ja">技術の話</span><span lang="en">tech (JP)</span></small></a></li>
+    <li><a href="https://dev.to/sishiya" target="_blank" rel="noopener">DEV <small><span lang="ja">技術の話（英語）</span><span lang="en">tech (EN)</span></small></a></li>
+    <li><a href="https://github.com/sishiya" target="_blank" rel="noopener">GitHub <small>sishiya</small></a></li>
+  </ul>
+
+  <footer class="note">
+    <p><span lang="ja">アプリは Claude（AI）と一緒に作っています。広告はありません。</span><span lang="en">The apps are made together with Claude (AI). No ads.</span></p>
+    <p><span lang="ja">アクセス解析（Google アナリティクス）を使っています。くわしくは</span><span lang="en">This site uses Google Analytics. See the</span> <a href="https://sishiya.github.io/manabi-lab/privacy.html"><span lang="ja">プライバシーポリシー</span><span lang="en">privacy policy</span></a><span lang="ja">。</span><span lang="en">.</span></p>
+    <p>© 2026 sishiya</p>
+  </footer>
+</main>
+<script>
+/* 言語のボタン。英語のときはラボへのリンクにも ?lang=en を付ける */
+document.querySelectorAll('.langs button').forEach(function(b){
+  b.setAttribute('aria-pressed', String(b.dataset.l===LANG));
+  b.addEventListener('click',function(){ if(b.dataset.l!==LANG) setLang(b.dataset.l); });
+});
+if(LANG==='en') document.querySelectorAll('a.go-link').forEach(function(a){ var u=new URL(a.href); u.searchParams.set('lang','en'); a.href=u.href; });
+document.title = LANG==='en' ? 'Sishiya ― Apps that run in your browser and show how things work' : document.title;
+</script>
+</body>
+</html>
