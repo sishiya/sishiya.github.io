@@ -3,3 +3,4 @@ Allow: /
 
 Sitemap: https://sishiya.github.io/sitemap.xml
 Sitemap: https://sishiya.github.io/manabi-lab/sitemap.xml
+Sitemap: https://sishiya.github.io/asobi-lab/sitemap.xml
